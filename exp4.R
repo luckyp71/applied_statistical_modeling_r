@@ -20,3 +20,27 @@ v <- df%>%
 
 
 ggplotly(v, tooltip='text')
+
+# ------------------ Confidence Interval
+df <- ToothGrowth
+glimpse(df)
+
+s = sd(df$len)
+n <- df%>%
+  select(len)%>%
+  summarise(n())%>%
+  pull()
+se = s/sqrt(n)
+
+s
+se
+zval = qnorm(0.975)
+
+# margin of error
+moe = zval*se
+moe
+xbar = mean(df$len)
+
+# 95% confidence interval
+ci <- xbar + c(-moe, moe)
+ci
