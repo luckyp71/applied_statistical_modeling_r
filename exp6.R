@@ -39,4 +39,4 @@ wilcox.test(chill, nonchill) # p-value 0.006, reject the null hypo. uptake distr
 wilcox.test(co2$uptake~co2$treatment)
 
 View(immer) # Y1 1931 and Y2 1932
-wilcox.test(immer$Y1, immer$Y2, paired = T) # reject the null hypo, the yields in both the years are significantly different
+wilcox.test(immer$Y1, immer$Y2, paired = T) # reject the null hypo, the yields in both years are significantly different
