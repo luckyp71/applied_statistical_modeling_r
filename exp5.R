@@ -43,7 +43,6 @@ t.test(oj, vc,
        var.equal = F,
        conf.level = 0.95) # accept the null hypo
 
-
 t.test(oj, vc,
        alternative = 'greater', paired = F) # accept the alternative hypo
 
