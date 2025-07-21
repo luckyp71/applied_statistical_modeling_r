@@ -4,6 +4,7 @@ require(ggplot2)
 require(plotly)
 require(moments)
 require(sciplot)
+require(Mass)
 
 x <- rnorm(n=1000, mean=3, sd=.25)
 
@@ -53,7 +54,7 @@ v <- data%>%
 
 ggplotly(v)
 
-# charting & graphing discrete data
+# ------------------------ visualizing discrete data
 data <- tapply(iris$sepal_length, iris$species, mean)
 df <- data.frame(
   species=names(data),
@@ -112,5 +113,24 @@ v <- isum%>%
 ggplotly(v, tooltip = 'text')
 
 
+men <- c(150, 120, 45)
+women <- c(320, 270, 100)
+rbind(men,women)
 
+food_survey <- as.data.frame(rbind(men,women))
+names(food_survey) <- c('chicken', 'salad', 'cake')
 
+food_survey
+
+chisq.test(food_survey)
+# the p-value is greater than 0.05, hence we can conclude there is no association between gender and food
+
+survey <- MASS::survey
+str(survey)
+names(survey) <- tolower(gsub('\\.', '_', names(survey)))
+View(survey)
+levels(survey$smoke)
+sfreq = table(survey$smoke)
+sfreq
+
+factor(c('male','male','female','male'))
