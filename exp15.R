@@ -25,5 +25,6 @@ anova(fit)
 
 summary(iris$species)
 
+
 fit2 <- lm(sepal_length~petal_length*petal_width, data=iris)
 summary(fit2)
