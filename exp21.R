@@ -91,4 +91,5 @@ summary(model3)
 clst <- lstrends(model3, ~diet, var='time')
 clst
 
+# for random slope & intercept : (1 + time | chick)
 
