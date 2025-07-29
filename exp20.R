@@ -5,7 +5,6 @@
 # though it may contain terms that are non-linear in the x's
 
 install.packages('nls2')
-install.packages('nlshelper')
 
 require(datasets)
 require(dplyr)
