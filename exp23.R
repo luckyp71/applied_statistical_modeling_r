@@ -59,4 +59,5 @@ summary(fit3)
            summary(fit3)$df.residual)
 
 # If p-value > 0.05 we say the given model Poisson or Negative Binomial fits the data
-
+# the fit3 is a better fit than fit2,
+# although a p-value of 0.0086 still shows some misfit
