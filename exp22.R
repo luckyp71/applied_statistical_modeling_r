@@ -76,12 +76,13 @@ data <- data%>%
   mutate(survive = number_tested - number_killed,
          survive_proportion = number_killed/(number_tested - number_killed))
 
-glimpse(data)
+fitglm2 <- glm(cbind(number_killed, survive) ~ dose, data=data, family = binomial)
+summary(fitglm2)
 
-glm()
+# check overdispersion
+x <- predict(fitglm2)
+y <- resid(fitglm2) 
 
-
-
-
+binnedplot(x,y)
 
 
