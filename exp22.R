@@ -83,6 +83,6 @@ summary(fitglm2)
 x <- predict(fitglm2)
 y <- resid(fitglm2) 
 
-binnedplot(x,y)
+binnedplot(x,y) #no overdispersion
 
 
