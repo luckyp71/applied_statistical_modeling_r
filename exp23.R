@@ -42,6 +42,21 @@ summary(fit2) # elevation is statistically significant while tci is not
 # compare models
 anova(fit, fit2, test='Chisq') #p-value > 0.05, tci has not improved the model performance
 
-# In case of overdisprsd data, use negative binomial regression
+# In case of overdispersed data, use negative binomial regression
+# conditional variance > mean
 fit3 <- glm.nb(cover~elev, data=data)
 summary(fit3)
+
+
+# ----------------------------- Goodness of Fit (GOF) Test
+# does model fit2 fit (poisson distribution) the data
+# does model fit3 (negative binomial) fit the data
+
+1 - pchisq(summary(fit2)$deviance,
+           summary(fit2)$df.residual) # p value of chi square
+
+1 - pchisq(summary(fit3)$deviance,
+           summary(fit3)$df.residual)
+
+# If p-value > 0.05 we say the given model Poisson or Negative Binomial fits the data
+
